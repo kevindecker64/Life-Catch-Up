@@ -1,11 +1,9 @@
-const Hobby = require("../models/hobby");
-const Person = require("../models/person");
-const Rating = require("../models/rating");
+const Task = require("../models/task");
 
 module.exports = {
   index,
   show,
-  new: newHobby,
+  new: newTask,
   create,
   delete: deleteOne,
 };
@@ -14,7 +12,7 @@ function index(req, res) {}
 
 function show(req, res) {}
 
-function newHobby(req, res) {}
+function newTask(req, res) {}
 
 function create(req, res) {}
 
