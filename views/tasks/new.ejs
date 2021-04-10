@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-      <h1><%= title %> </h1>
+    <h1><%= title %></h1>
     <form action="/tasks" method="POST">
       <label>Task Name:</label>
       <input type="text" name="name" />
@@ -24,10 +24,10 @@
       <label>Difficulty:</label>
       <input type="number" name="difficulty" min="1" max="5" />
       <label>Length:</label>
-      <input type="text" />
+      <input type="text" name="length" />
       <label>Your Name:</label>
-      <input type="text" />
-      <input type="submit" value="ADD TASK">
+      <input type="text" name="people" />
+      <input type="submit" value="ADD TASK" />
     </form>
   </body>
 </html>
