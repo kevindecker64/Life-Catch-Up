@@ -8,7 +8,6 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <% tasks.forEach(task => { %>
     <section>
       <div>Task Name:</div>
       <div><%= task.name %></div>
@@ -24,9 +23,6 @@
       <div><%= task.length %></div>
       <div>People:</div>
       <div><%= task.people %></div>
-      <a href="/tasks/<%= task._id %>">DETAILS</a>
     </section>
-    <br />
-    <% }); %>
   </body>
 </html>
