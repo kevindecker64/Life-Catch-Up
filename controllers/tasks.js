@@ -11,7 +11,11 @@ module.exports = {
   delete: deleteOne,
 };
 
-function index(req, res) {}
+function index(req, res) {
+  Task.find({}, function(err, tasks) {
+    res.render('tasks/index', {title: 'All Tasks', tasks});
+  })
+}
 
 function show(req, res) {}
 
