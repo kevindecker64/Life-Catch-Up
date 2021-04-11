@@ -10,6 +10,6 @@ router.get("/:id", tasksCtrl.show);
 router.post("/", tasksCtrl.create);
 router.get("/:id/edit", tasksCtrl.edit);
 router.put("/:id", tasksCtrl.update);
-// router.delete("/:id", tasksCtrl.delete);
+router.delete("/:id", tasksCtrl.delete);
 
 module.exports = router;
