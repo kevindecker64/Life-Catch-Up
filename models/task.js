@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // create rating schema here to embed in ratings property of task
+const ratingSchema = new Schema({
+  rating: {type: Number, min: 1, max:5, required: true} // Maybe unrequire if it messes with creating new task
+})
 
 const taskSchema = new Schema({
   name: { type: String, required: true },
@@ -11,7 +14,7 @@ const taskSchema = new Schema({
   difficulty: { type: Number, min: 1, max: 5 }, // maybe set required if Chore is chosen, maybe make a property of ratingSchema?
   length: { type: String }, // maybe set required if Hobby is chosen
   people: { type: String },
-  ratings: {},
+  ratings: [ratingSchema],
 });
 
 module.exports = mongoose.model("Task", taskSchema);
