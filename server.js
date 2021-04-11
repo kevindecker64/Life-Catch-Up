@@ -13,7 +13,7 @@ const cors = require("cors");
 
 const indexRouter = require("./routes/index");
 const tasksRouter = require("./routes/tasks");
-const { config } = require("dotenv");
+// const { config } = require("dotenv");
 
 const app = express();
 
