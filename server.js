@@ -3,8 +3,9 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+require("dotenv").config();
 
-const methodOverride = require('method-override');
+const methodOverride = require("method-override");
 
 require("./config/database");
 
@@ -12,6 +13,7 @@ const cors = require("cors");
 
 const indexRouter = require("./routes/index");
 const tasksRouter = require("./routes/tasks");
+const { config } = require("dotenv");
 
 const app = express();
 
@@ -21,7 +23,7 @@ app.set("view engine", "ejs");
 
 app.use(cors());
 
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 
 app.use(logger("dev"));
 app.use(express.json());

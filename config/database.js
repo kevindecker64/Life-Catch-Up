@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/tasks", {
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
+  useFindAndModify: true,
 });
 
 const db = mongoose.connection;
