@@ -51,9 +51,6 @@ function edit(req, res) {
   });
 }
 
-// Only updates after reloading the page
-// Does this need to be async?
-  // Seems to function the same way with async/await...
 function update(req, res) {
   Task.findByIdAndUpdate(
     req.params.id,
@@ -69,11 +66,8 @@ function update(req, res) {
       },
     },
     function (err, task) {
-      // task.save(function (err) {
-      //   console.log(task);
-      //   if (err) return res.redirect("tasks/edit");
-      // });
-      res.render("tasks/show", { title: "Task Details", task });
+      if (err) return res.redirect("/tasks/edit");
+      show(req, res);
     }
   );
 }
