@@ -4,6 +4,8 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+const methodOverride = require('method-override');
+
 require("./config/database");
 
 const cors = require("cors");
@@ -18,6 +20,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(cors());
+
+app.use(methodOverride('_method'));
 
 app.use(logger("dev"));
 app.use(express.json());
