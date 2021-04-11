@@ -24,6 +24,11 @@
       <div>People:</div>
       <div><%= task.people %></div>
       <a href="/tasks/<%= task._id %>/edit" >EDIT TASK</a>
+      <br>
+      <form action="/tasks/<%= task._id%>?_method=DELETE" method='POST'>
+      <button type="submit">DELETE TASK</button>
+      </form>
+      <!-- <button type="button" onclick="">DELETE TASK</a> -->
       <!-- <a href="/tasks/<%= task._id %>/edit" >DELETE TASK</a> -->
     </section>
   </body>
