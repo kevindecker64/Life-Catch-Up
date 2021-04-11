@@ -38,7 +38,7 @@ function create(req, res) {
 }
 
 function deleteOne(req, res) {
-  Task.findByIdAndRemove(req.params.id, function(err) {
+  Task.findByIdAndRemove(req.params.id, function (err) {
     if (err) return res.redirect("/tasks/show");
   });
   res.redirect("/tasks");
@@ -47,15 +47,33 @@ function deleteOne(req, res) {
 function edit(req, res) {
   Task.findById(req.params.id, function (err, task) {
     if (err) return res.redirect("/tasks/show");
-    res.render("tasks/edit", { title: "Edit Task", task});
+    res.render("tasks/edit", { title: "Edit Task", task });
   });
 }
 
+// Only updates after reloading the page
+// Does this need to be async?
+  // Seems to function the same way with async/await...
 function update(req, res) {
-  console.log("works");
-  Task.findByIdAndUpdate(req.params.id, req.body)
-    // function (err) {
-    // if (err) return res.redirect("/");
-  // });
-  res.redirect("/tasks");
+  Task.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        name: req.body.name,
+        type: req.body.type,
+        category: req.body.category,
+        priority: req.body.priority,
+        difficulty: req.body.difficulty,
+        length: req.body.length,
+        people: req.body.people,
+      },
+    },
+    function (err, task) {
+      // task.save(function (err) {
+      //   console.log(task);
+      //   if (err) return res.redirect("tasks/edit");
+      // });
+      res.render("tasks/show", { title: "Task Details", task });
+    }
+  );
 }

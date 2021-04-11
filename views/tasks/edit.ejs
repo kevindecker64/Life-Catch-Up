@@ -9,7 +9,7 @@
   <body>
     <h1><%= title %></h1>
     <section>
-      <form action="/tasks/{{<%= task._id%>}}?_method=PUT" method="post">
+      <form action="/tasks/<%= task._id%>?_method=PUT" method="POST">
         <label>Task Name:</label>
         <input type="text" name="name" value="<%= task.name %>"/>
         <label>Type:</label>
