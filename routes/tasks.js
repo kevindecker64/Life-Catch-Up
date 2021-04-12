@@ -5,6 +5,10 @@ const tasksCtrl = require("../controllers/tasks");
 
 // remove 'tasks' from route when we specify in the server
 router.get("/new", tasksCtrl.new);
+
+router.get("/hobbies", tasksCtrl.hobbiesIndex);
+router.get("/chores", tasksCtrl.choresIndex);
+
 router.get("/", tasksCtrl.index);
 router.get("/:id", tasksCtrl.show);
 router.post("/", tasksCtrl.create);

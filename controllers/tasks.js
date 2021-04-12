@@ -11,6 +11,8 @@ module.exports = {
   delete: deleteOne,
   edit,
   update,
+  hobbiesIndex,
+  choresIndex,
 };
 
 function index(req, res) {
@@ -70,4 +72,16 @@ function update(req, res) {
       show(req, res);
     }
   );
+}
+
+function hobbiesIndex(req, res){
+  Task.find({}, function (err, tasks) {
+    res.render("tasks/hobbies", { title: "Hobbies", tasks });
+  });
+}
+
+function choresIndex(req, res){
+  Task.find({}, function (err, tasks) {
+    res.render("tasks/chores", { title: "Chores", tasks });
+  });
 }

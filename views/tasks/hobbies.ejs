@@ -1,6 +1,7 @@
 <%- include('../partials/header') %> 
 
 <% tasks.forEach(task => { %>
+    <% if (task.type === "Hobby") { %> 
 <section>
   <label>Task Name:</label>
   <div><%= task.name %></div>
@@ -30,6 +31,7 @@
   <a href="/tasks/<%= task._id %>">DETAILS</a>
 </section>
 <br />
+<% } %> 
 <% }); %> 
 
 <%- include('../partials/footer') %>
