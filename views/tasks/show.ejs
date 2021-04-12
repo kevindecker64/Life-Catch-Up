@@ -16,7 +16,9 @@
   <label>People:</label>
   <div><%= task.people %></div>
   <label>Ratings:</label>
-  <div><%= task.ratings %></div>
+  <% task.ratings.forEach(r => { %>
+  <div><%= r.rating %></div>
+  <% }) %>
   <a href="/tasks/<%= task._id %>/edit">EDIT TASK</a>
   <br />
   <a href="/tasks/<%= task._id %>/rating">ADD RATING</a>
