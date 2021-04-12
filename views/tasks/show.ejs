@@ -9,20 +9,22 @@
   <body>
     <h1><%= title %></h1>
     <section>
-      <div>Task Name:</div>
+      <label>Task Name:</label>
       <div><%= task.name %></div>
-      <div>Task Type:</div>
+      <label>Task Type:</label>
       <div><%= task.type %></div>
-      <div>Category:</div>
+      <label>Category:</label>
       <div><%= task.category %></div>
-      <div>Priority:</div>
+      <label>Priority:</label>
       <div><%= task.priority %></div>
-      <div>Difficulty:</div>
+      <label>Difficulty:</label>
       <div><%= task.difficulty %></div>
-      <div>Length:</div>
+      <label>Length:</label>
       <div><%= task.length %></div>
-      <div>People:</div>
+      <label>People:</label>
       <div><%= task.people %></div>
+      <label>Ratings:</label>
+      <div><%= task.ratings %></div>
       <a href="/tasks/<%= task._id %>/edit" >EDIT TASK</a>
       <br>
       <a href="/tasks/<%= task._id %>/rating" >ADD RATING</a>
