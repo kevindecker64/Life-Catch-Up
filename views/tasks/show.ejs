@@ -16,9 +16,11 @@
   <label>People:</label>
   <div><%= task.people %></div>
   <label>Ratings:</label>
-  <% task.ratings.forEach(r => { %>
+  <% task.ratings.forEach(r => { %> <% if(r.person === "") { %>
+  <div><%= `Anonymous: ${r.rating}` %></div>
+  <% } else { %>
   <div><%= `${r.person}: ${r.rating}` %></div>
-  <% }) %>
+  <% }}) %>
   <a href="/tasks/<%= task._id %>/edit">EDIT TASK</a>
   <br />
   <a href="/tasks/<%= task._id %>/rating">ADD RATING</a>
