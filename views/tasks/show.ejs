@@ -1,39 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <section>
-      <label>Task Name:</label>
-      <div><%= task.name %></div>
-      <label>Task Type:</label>
-      <div><%= task.type %></div>
-      <label>Category:</label>
-      <div><%= task.category %></div>
-      <label>Priority:</label>
-      <div><%= task.priority %></div>
-      <label>Difficulty:</label>
-      <div><%= task.difficulty %></div>
-      <label>Length:</label>
-      <div><%= task.length %></div>
-      <label>People:</label>
-      <div><%= task.people %></div>
-      <label>Ratings:</label>
-      <% task.ratings.forEach(r => { %>
-      <div><%= r.rating %></div>
-      <% }) %>
-      <a href="/tasks/<%= task._id %>/edit" >EDIT TASK</a>
-      <br>
-      <a href="/tasks/<%= task._id %>/rating" >ADD RATING</a>
-      <br>
-      <form action="/tasks/<%= task._id%>?_method=DELETE" method='POST'>
-      <button type="submit">DELETE TASK</button>
-      </form>
-    </section>
-  </body>
-</html>
+<%- include('../partials/header') %>
+
+<section>
+  <label>Task Name:</label>
+  <div><%= task.name %></div>
+  <label>Task Type:</label>
+  <div><%= task.type %></div>
+  <label>Category:</label>
+  <div><%= task.category %></div>
+  <label>Priority:</label>
+  <div><%= task.priority %></div>
+  <label>Difficulty:</label>
+  <div><%= task.difficulty %></div>
+  <label>Length:</label>
+  <div><%= task.length %></div>
+  <label>People:</label>
+  <div><%= task.people %></div>
+  <label>Ratings:</label>
+  <% task.ratings.forEach(r => { %>
+  <div><%= r.rating %></div>
+  <% }) %>
+  <a href="/tasks/<%= task._id %>/edit">EDIT TASK</a>
+  <br />
+  <a href="/tasks/<%= task._id %>/rating">ADD RATING</a>
+  <br />
+  <form action="/tasks/<%= task._id%>?_method=DELETE" method="POST">
+    <button type="submit">DELETE TASK</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
