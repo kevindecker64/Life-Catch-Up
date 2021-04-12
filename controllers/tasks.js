@@ -41,7 +41,7 @@ function deleteOne(req, res) {
   Task.findByIdAndRemove(req.params.id, function (err) {
     if (err) return res.redirect("/tasks/show");
   });
-  res.redirect("/tasks");
+  index(req, res);
 }
 
 function edit(req, res) {
