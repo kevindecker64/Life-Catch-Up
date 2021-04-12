@@ -16,6 +16,15 @@
   <div><%= task.length %></div>
   <label>People:</label>
   <div><%= task.people %></div>
+  <label>Average Rating:</label>
+  <% let ratArr = []; %>
+  <% task.ratings.forEach(r => { %>
+    <% ratArr.push(r.rating); %>
+    <% }) %>
+  <% let totalArr = ratArr.reduce(avgFunc) %>
+  <% function avgFunc(total, num) { return total + num; } %>
+  <% let avgRat = (totalArr / ratArr.length) %>
+  <div><%= avgRat.toFixed(1) %></div>
   <a href="/tasks/<%= task._id %>">DETAILS</a>
 </section>
 <br />

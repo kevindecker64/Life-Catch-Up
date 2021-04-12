@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 // create rating schema here to embed in ratings property of task
 const ratingSchema = new Schema({
-  rating: {type: Number, min: 1, max:5, default: 3} // Maybe unrequire if it messes with creating new task
+  person: { type: String, default: "Anonymous" },
+  rating: { type: Number, min: 1, max:5, default: 3 }, 
 })
 
 const taskSchema = new Schema({
