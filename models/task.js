@@ -1,19 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// create rating schema here to embed in ratings property of task
 const ratingSchema = new Schema({
-  person: { type: String, default: "Anonymous" },
-  rating: { type: Number, min: 1, max:5, default: 3 }, 
+  person: { type: String },
+  rating: { type: Number, min: 1, max:5 }, 
 })
 
 const taskSchema = new Schema({
   name: { type: String, required: true },
-  type: { type: String, required: true }, // set select element to have 'Chore' and 'Hobby' as options
+  type: { type: String, required: true }, 
   category: { type: String, required: true },
-  priority: { type: Number, min: 1, max: 5 }, // maybe set required if Chore is chosen
-  difficulty: { type: Number, min: 1, max: 5 }, // maybe set required if Chore is chosen, maybe make a property of ratingSchema?
-  length: { type: String }, // maybe set required if Hobby is chosen
+  priority: { type: Number, min: 1, max: 5 }, 
+  difficulty: { type: Number, min: 1, max: 5 }, 
+  length: { type: String }, 
   people: { type: String },
   ratings: [ratingSchema],
 });
