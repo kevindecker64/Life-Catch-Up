@@ -17,6 +17,7 @@
   <div><%= task.people %></div>
   <label>Ratings:</label>
   <% task.ratings.forEach(r => { %>
+    <% console.log(r) %> 
   <div><%= `${r.person}: ${r.rating}` %></div>
   <% }) %>
   <a href="/tasks/<%= task._id %>/edit">EDIT TASK</a>
