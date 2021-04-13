@@ -2,35 +2,37 @@
 
 <% tasks.forEach(task => { %>
     <% if (task.type === "Chore") { %> 
-<section>
-  <label>Task Name:</label>
-  <div><%= task.name %></div>
-  <label>Task Type:</label>
-  <div><%= task.type %></div>
-  <label>Category:</label>
-  <div><%= task.category %></div>
-  <label>Priority:</label>
-  <div><%= task.priority %></div>
-  <label>Difficulty:</label>
-  <div><%= task.difficulty %></div>
-  <label>Length:</label>
-  <div><%= task.length %></div>
-  <label>People:</label>
-  <div><%= task.people %></div>
-  <% if (task.ratings.length !== 0) { %> 
-  <label>Average Rating:</label>
-  <% let ratArr = []; %>
-  <% task.ratings.forEach(r => { %>
-    <% ratArr.push(r.rating); %>
-    <% }) %>
-  <% let totalArr = ratArr.reduce(avgFunc) %>
-  <% function avgFunc(total, num) { return total + num; } %>
-  <% let avgRat = (totalArr / ratArr.length) %>
-  <div><%= avgRat.toFixed(1) %></div>
-  <% } %> 
-  <a href="/tasks/<%= task._id %>">DETAILS</a>
-</section>
-<br />
+      <section id="main">
+        <section class="all-tasks-cards" id="first">
+        <label>Task Name:</label>
+        <div><%= task.name %></div>
+      </section>
+      <section class="all-tasks-cards" id="second">
+        <label>Task Type:</label>
+        <div><%= task.type %></div>
+        <label>Category:</label>
+        <div><%= task.category %></div>
+      </section>
+      <section class="all-tasks-cards" id="fourth">
+        <label>People:</label>
+        <div><%= task.people %></div>
+      </section>
+      <section class="all-tasks-cards" id="fifth">
+        <% if (task.ratings.length !== 0) { %> 
+        <label>Average Rating:</label>
+        <% let ratArr = []; %>
+        <% task.ratings.forEach(r => { %>
+          <% ratArr.push(r.rating); %>
+          <% }) %>
+        <% let totalArr = ratArr.reduce(avgFunc) %>
+        <% function avgFunc(total, num) { return total + num; } %>
+        <% let avgRat = (totalArr / ratArr.length) %>
+        <div><%= avgRat.toFixed(1) %></div>
+        <% } %> 
+      </section>
+        <a href="/tasks/<%= task._id %>" class="all-tasks-cards">DETAILS</a>
+      </section>
+      <br />
 <% } %> 
 <% }); %> 
 
