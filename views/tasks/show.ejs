@@ -1,26 +1,38 @@
 <%- include('../partials/header') %>
 
-<section>
-  <label>Task Name:</label>
-  <div><%= task.name %></div>
-  <label>Task Type:</label>
-  <div><%= task.type %></div>
-  <label>Category:</label>
-  <div><%= task.category %></div>
-  <label>Priority:</label>
-  <div><%= task.priority %></div>
-  <label>Difficulty:</label>
-  <div><%= task.difficulty %></div>
-  <label>Length:</label>
-  <div><%= task.length %></div>
-  <label>People:</label>
-  <div><%= task.people %></div>
-  <label>Ratings:</label>
-  <% task.ratings.forEach(r => { %> <% if(r.person === "") { %>
-  <div><%= `Anonymous: ${r.rating}` %></div>
-  <% } else { %>
-  <div><%= `${r.person}: ${r.rating}` %></div>
-  <% }}) %>
+<section id="all-cards">
+  <section class="card-row">
+    <label>Task Name:</label>
+    <div><%= task.name %></div>
+  </section>
+  <section class="card-row">
+    <label>Task Type:</label>
+    <div><%= task.type %></div>
+    <label>Category:</label>
+    <div><%= task.category %></div>
+  </section>
+  <section class="card-row">
+    <label>Priority:</label>
+    <div><%= task.priority %></div>
+    <label>Difficulty:</label>
+    <div><%= task.difficulty %></div>
+    <label>Length:</label>
+    <div><%= task.length %></div>
+  </section>
+  <section class="card-row">
+    <label>People:</label>
+    <div><%= task.people %></div>
+  </section>
+  <section class="card-row-rating">
+    <label>Ratings:</label>
+  </section>
+  <section class="ratings">
+    <% task.ratings.forEach(r => { %> <% if(r.person === "") { %>
+    <div><%= `Anonymous: ${r.rating}` %></div>
+    <% } else { %>
+    <div><%= `${r.person}: ${r.rating}` %></div>
+    <% }}) %>
+  </section>
   <a href="/tasks/<%= task._id %>/edit">EDIT TASK</a>
   <br />
   <a href="/tasks/<%= task._id %>/rating">ADD RATING</a>
