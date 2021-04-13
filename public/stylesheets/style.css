@@ -31,10 +31,22 @@ a {
   color: #0077ff;
 }
 
-section {
+#main {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  
+  grid-template-columns: auto auto;
   background-color: lightgray;
   border-radius: 5px;
+  border: 5px solid;
+}
+
+.all-tasks-cards {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 section > * {
