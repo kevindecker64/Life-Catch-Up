@@ -7,7 +7,6 @@ body {
   margin: 0;
   height: 100vh;
   padding: 20px;
-  font: 14px Helvetica;
 }
 
 body > nav {
@@ -31,18 +30,32 @@ a {
   color: #0077ff;
 }
 
-#main {
+#all-cards {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  
   grid-template-columns: auto auto;
   background-color: lightgray;
   border-radius: 5px;
   border: 5px solid;
+  /* max-width: 300px; */
 }
 
-.all-tasks-cards {
+.card-row-rating {
+  padding: 10px 5px 0px 5px;
+  font-style: oblique;
+  font-size: x-large;
+  text-decoration: underline;
+}
+
+.ratings {
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 5px 5px 5px;
+}
+
+.card-row {
   padding: 5px;
   display: flex;
   flex-direction: row;
