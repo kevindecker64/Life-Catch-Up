@@ -21,7 +21,9 @@
   </section>
   <section class="card-row">
     <label>People:</label>
-    <div><%= task.people %></div>
+    <% task.people.forEach(person => { %> 
+    <div><%= person %></div>
+    <% }); %> 
   </section>
   <section class="card-row-rating">
     <label>Ratings:</label>

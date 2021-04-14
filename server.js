@@ -14,6 +14,7 @@ const cors = require("cors");
 const indexRouter = require("./routes/index");
 const tasksRouter = require("./routes/tasks");
 const ratingsRouter = require("./routes/ratings");
+const peopleRouter = require("./routes/people");
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/tasks", tasksRouter);
 app.use("/tasks", ratingsRouter);
+app.use("/tasks", peopleRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));
