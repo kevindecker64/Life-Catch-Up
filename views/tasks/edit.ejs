@@ -14,13 +14,12 @@
       <label>Category:</label>
       <input type="text" name="category" value="<%= task.category %>" />
       <label>Priority:</label>
-      <input
-        type="number"
-        name="priority"
-        min="1"
-        max="5"
-        value="<%= task.priority %>"
-      />
+      <select name="priority">
+        <option value="<%= task.priority %>"><%= task.priority %></option>
+        <option value="High">High</option>
+        <option value="Med">Med</option>
+        <option value="Low">Low</option>
+      </select>
       <label>Difficulty:</label>
       <input
         type="number"

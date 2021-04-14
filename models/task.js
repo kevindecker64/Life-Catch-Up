@@ -10,7 +10,7 @@ const taskSchema = new Schema({
   name: { type: String, required: true },
   type: { type: String, required: true }, 
   category: { type: String, required: true },
-  priority: { type: Number, min: 1, max: 5 }, 
+  priority: String, 
   difficulty: { type: Number, min: 1, max: 5 }, 
   length: String, 
   people: [String],
