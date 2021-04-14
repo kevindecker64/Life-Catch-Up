@@ -35,8 +35,8 @@ function create(req, res) {
   const task = new Task(req.body);
   task.save(function (err) {
     if (err) return res.redirect("/tasks/new");
+    index(req, res);
   });
-  res.redirect("/tasks");
 }
 
 function deleteOne(req, res) {
