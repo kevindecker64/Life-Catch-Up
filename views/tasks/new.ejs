@@ -3,7 +3,7 @@
 <form action="/tasks" method="POST">
   <section id="new-task-input">
     <label>Task Name:</label>
-    <input type="text" name="name" placeholder="Enter Your Name"/>
+    <input type="text" name="name" placeholder="Enter Task Name"/>
     <label>Type:</label>
     <select name="type">
       <option value="">--Chore or Hobby--</option>
@@ -11,7 +11,7 @@
       <option value="Hobby">Hobby</option>
     </select>
     <label>Category:</label>
-    <input type="text" name="category" placeholder="Housekeeping, Sports, Book, etc..."/>
+    <input type="text" name="category" placeholder="Cleaning, Sports, etc..."/>
     <label>Priority:</label>
     <select name="priority">
       <option value="">--High, Med, Low--</option>
@@ -19,13 +19,12 @@
       <option value="Med">Med</option>
       <option value="Low">Low</option>
     </select>
-    <!-- <input type="number" name="priority" min="1" max="5" /> -->
     <label>Difficulty:</label>
     <input type="number" name="difficulty" min="1" max="5" />
     <label>Length:</label>
     <input type="text" name="length" />
     <label>Your Name:</label>
-    <input type="text" name="people" />
+    <input type="text" name="people" placeholder="Enter Your Name"/>
     <br />
     <input type="submit" value="ADD TASK" />
   </section>
