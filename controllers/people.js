@@ -4,21 +4,21 @@ const router = express.Router();
 const Task = require("../models/task");
 
 module.exports = {
-  new: newRating,
+  new: newPerson,
   create,
 };
 
-function newRating(req, res) {
+function newPerson(req, res) {
   Task.findById(req.params.id, function (err, task) {
-    res.render("tasks/rating", { title: "Add Rating", task });
+    res.render("tasks/newPerson", { title: "Add Person", task });
   });
 }
 
 function create(req, res) {
   Task.findById(req.params.id, function (err, task) {
-    task.ratings.push(req.body);
+    task.people.push(req.body);
     task.save(function (err) {
-      res.redirect(`/tasks/${task._id}`);
+      console.log(`---Here is the Task ${task}`);
     });
   });
 }
