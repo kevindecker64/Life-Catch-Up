@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const Task = require("../models/task");
+const tasksCtrl = require("../controllers/tasks");
 
 module.exports = {
   new: newPerson,
@@ -16,9 +17,9 @@ function newPerson(req, res) {
 
 function create(req, res) {
   Task.findById(req.params.id, function (err, task) {
-    task.people.push(req.body);
+    task.people.push(req.body.people);
     task.save(function (err) {
-      console.log(`---Here is the Task ${task}`);
+      res.redirect("/tasks");
     });
   });
 }
