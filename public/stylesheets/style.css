@@ -53,6 +53,7 @@ a {
 
 #add-rating > * {
   margin: 5px;
+  margin: 0px 0px 15px 0px;
 }
 
 .card-row-rating {
@@ -98,4 +99,13 @@ section > * {
 
 label {
   font-weight: bolder;
+}
+
+#Questions {
+  background-color: lightgray;
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 5px solid;
 }
