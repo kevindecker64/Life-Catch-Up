@@ -20,11 +20,9 @@ Show Details:
 HTML, CSS, Javascript, EJS, Express, MongoDB, Node.js
 
 # Getting Started
-Trello Board:
-https://trello.com/b/TYRrxZTF/seir-project-2
+[Trello Board](https://trello.com/b/TYRrxZTF/seir-project-2)
 
-Link to app: 
-https://life-catch-up.herokuapp.com/
+[Link to app](https://life-catch-up.herokuapp.com/)
 
 # Possible App Features
 We would like to implement media responsiveness for those of you on a phone or tablet, and we are also considering the possibility of implementing a user log in feature.
